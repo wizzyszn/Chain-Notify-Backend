@@ -20,11 +20,11 @@ const morgan = require("morgan");
 const cookieParser = require('cookie-parser');
 const port = (0, env_1.getEnvVar)("SERVER_PORT", "5000");
 dotenv_1.default.config();
-const userRoute_1 = require("./routes/userRoute");
-const walletRoute_1 = require("./routes/walletRoute");
-const quickNode_1 = require("./routes/quickNode");
-const AuthenticateUser_1 = require("./middlewares/AuthenticateUser");
 const cors_1 = __importDefault(require("cors"));
+const AuthenticateUser_1 = require("./middlewares/AuthenticateUser");
+const quickNode_1 = require("./routes/quickNode");
+const walletRoute_1 = require("./routes/walletRoute");
+const userRoute_1 = require("./routes/userRoute");
 const app = (0, express_1.default)();
 app.use(cookieParser());
 app.use((0, cors_1.default)({
