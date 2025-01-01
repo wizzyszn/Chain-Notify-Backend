@@ -15,7 +15,7 @@ const app = express();
 app.use(cookieParser());
 app.use(
   cors({
-    origin: process.env.Frontend_URL || 'https://chain-notify-frontend.vercel.app', // Frontend origin
+    origin: 'https://chain-notify-frontend.vercel.app', // Frontend origin
     credentials: true, // Allow cookies or other credentials
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
