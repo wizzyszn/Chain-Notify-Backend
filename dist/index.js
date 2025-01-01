@@ -28,7 +28,7 @@ const userRoute_1 = require("./routes/userRoute");
 const app = (0, express_1.default)();
 app.use(cookieParser());
 app.use((0, cors_1.default)({
-    origin: process.env.Frontend_URL || 'http://localhost:5173', // Frontend origin
+    origin: process.env.Frontend_URL || 'https://chain-notify-frontend.vercel.app', // Frontend origin
     credentials: true, // Allow cookies or other credentials
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
