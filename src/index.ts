@@ -1,16 +1,16 @@
 import express, { Request, Response } from "express";
 import mongoose from "mongoose";
-import { getEnvVar } from "./src/utils/env";
+import { getEnvVar } from "./utils/env";
 import dotenv from "dotenv";
 const morgan = require("morgan");
 const cookieParser = require('cookie-parser');
 const port = getEnvVar("SERVER_PORT", "5000");
 dotenv.config();
-import {userRouter} from "./src/routes/userRoute"
-import {walletRouter} from "./src/routes/walletRoute"
-import {quickNodeRouter} from "./src/routes/quickNode"
-import { authenticate } from "./src/middlewares/AuthenticateUser";
 import cors from 'cors'
+import { authenticate } from "./middlewares/AuthenticateUser";
+import { quickNodeRouter } from "./routes/quickNode";
+import { walletRouter } from "./routes/walletRoute";
+import { userRouter } from "./routes/userRoute";
 const app = express();
 app.use(cookieParser());
 app.use(
@@ -24,7 +24,7 @@ app.use(
 app.use(express.json({ limit: '50mb' }));
 //?* MIDDLEWARES
 app.use(morgan("dev"));
-//?* ROUTES
+//?* ROUTES 
 app.use('/webhook/quicknode', quickNodeRouter)
 app.use('/api/v1/auth', userRouter);
 

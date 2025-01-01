@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.quickNodeRouter = void 0;
+const express_1 = require("express");
+//import { verifyAPIKey } from "../middlewares/QuickNodeApiKey";
+//import { verifyQuickNodeSignature } from "../middlewares/QuickNodeSignature";
+const quickNode_1 = require("../controllers/quickNode");
+const quickNodeRouter = (0, express_1.Router)();
+exports.quickNodeRouter = quickNodeRouter;
+quickNodeRouter.post('/', quickNode_1.quicknodeWebHook);
